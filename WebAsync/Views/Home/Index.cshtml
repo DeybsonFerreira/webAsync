@@ -1,0 +1,46 @@
+﻿
+    <div class="ui container" ng-controller="HomeController">
+
+
+            <h1>Método Assíncrono</h1>
+
+            <button ng-click="GetPersonAsync()" class="ui green button">
+                Get Assíncrono
+            </button>
+
+            <button ng-click="GetPerson()" class="ui green button">
+                Get Síncrono
+            </button>
+
+
+
+
+        <table class="ui unstackable table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Documento</th>
+                    <th class="right aligned"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="person in PersonList | orderBy: 'nome'">
+                    <td ng-bind="person.Id"></td>
+                    <td ng-bind="person.Nome"></td>
+                    <td ng-bind="person.Sobrenome"></td>
+                    <td ng-bind="person.Documento"></td>
+                    <td class="right aligned">
+                        <button class="ui blue icon button">
+                            <i class="check icon"></i>
+                        </button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+<script src="~/Views/Home/Home.js"></script>
